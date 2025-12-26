@@ -1,0 +1,119 @@
+--- Pricing Section Enhancements ---
+section.bg-dark {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a soft radial gradient glow background */
+section.bg-dark::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+  animation: slow-rotate 25s linear infinite;
+  z-index: 0;
+}
+
+/* Slowly rotate background glow */
+@keyframes slow-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- plan-card Styling --- */
+.plan-card {
+  position: relative;
+  border-radius: 18px;
+  transition: all 0.4s ease;
+  transform-origin: center;
+  background: #f8f9fa;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Add subtle gradient overlay for premium feel */
+.plan-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  transition: all 0.5s ease;
+}
+
+/* --- Hover Effect --- */
+.plan-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card:hover::before {
+  left: 0;
+}
+
+/* --- Highlighted plan-card (Pro Plan) --- */
+.plan-card.bg-primary {
+  background: linear-gradient(135deg, #6f42c1, #d63384);
+  color: #fff !important;
+  box-shadow: 0 8px 25px rgba(111, 66, 193, 0.4);
+}
+
+.plan-card.bg-primary:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(111, 66, 193, 0.6);
+}
+
+/* --- Check Icons --- */
+.plan-card .text-success {
+  color: #198754 !important;
+  transition: color 0.3s ease;
+}
+
+.plan-card:hover .text-success {
+  color: #0dcaf0 !important;
+}
+
+/* --- Smooth entry animation for each plan-card --- */
+.plan-card {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Make animation slightly delayed per plan-card --- */
+.col-lg-4:nth-child(1) .plan-card {
+  animation-delay: 0.1s;
+}
+.col-lg-4:nth-child(2) .plan-card {
+  animation-delay: 0.3s;
+}
+.col-lg-4:nth-child(3) .plan-card {
+  animation-delay: 0.5s;
+}

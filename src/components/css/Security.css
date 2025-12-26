@@ -1,0 +1,39 @@
+.security-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.security-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.security-card:hover .icon-wrapper {
+  background: linear-gradient(135deg, #6f42c1, #d63384);
+  transform: rotate(10deg) scale(1.05);
+}
+
+.card-title {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.text-muted {
+  font-size: 0.95rem;
+}
