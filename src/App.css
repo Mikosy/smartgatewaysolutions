@@ -10,7 +10,7 @@
   font-family: "Inter", sans-serif; 
 }
 .background-image{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(stata-center-modern-architecture-cambridge-building-complex-3840x2160-5296.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/stata-center-modern-architecture-cambridge-building-complex-3840x2160-5296.jpg);
   height: 100%;
   object-fit: center;
   background-position: center;
